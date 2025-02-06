@@ -1,0 +1,174 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Teacher.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=3]
+[ext_resource path="res://Assets/SFX/lebron.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Assets/game_background.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Student.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/UI/stars/empty.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/game_buttons/button_play.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/game_buttons/button_arrow_hover.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/game_buttons/button_pause.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/game_buttons/button_pause_pressed.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/game_buttons/button_arrow.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/game_buttons/button_play_pressed.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/game_buttons/button_arrow_pressed.png" type="Texture" id=14]
+[ext_resource path="res://Assets/UI/game_buttons/button_pause_hover.png" type="Texture" id=15]
+[ext_resource path="res://Assets/UI/stars/full.png" type="Texture" id=16]
+[ext_resource path="res://Assets/UI/game_buttons/button_play_hover.png" type="Texture" id=17]
+[ext_resource path="res://Scripts/RandomTeacherTimer.gd" type="Script" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Student" parent="." instance=ExtResource( 6 )]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Teacher" parent="." instance=ExtResource( 2 )]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1326, 339 )
+stream = ExtResource( 4 )
+max_distance = 3000.0
+attenuation = 0.307787
+bus = "SFX"
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="."]
+margin_left = 69.0
+margin_top = 63.0
+margin_right = 289.0
+margin_bottom = 148.0
+custom_constants/separation = 35
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ReturnButton" type="TextureButton" parent="ButtonsContainer"]
+margin_right = 105.0
+margin_bottom = 85.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 9 )
+
+[node name="PlayPause" type="PanelContainer" parent="ButtonsContainer"]
+margin_left = 140.0
+margin_right = 245.0
+margin_bottom = 85.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="PlayButton" type="TextureButton" parent="ButtonsContainer/PlayPause"]
+margin_right = 105.0
+margin_bottom = 85.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 17 )
+
+[node name="PauseButton" type="TextureButton" parent="ButtonsContainer/PlayPause"]
+margin_right = 105.0
+margin_bottom = 85.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 15 )
+
+[node name="StarsContainer" type="HBoxContainer" parent="."]
+margin_left = 810.0
+margin_top = 52.0
+margin_right = 1376.0
+margin_bottom = 157.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Star1" type="TextureProgress" parent="StarsContainer"]
+margin_right = 110.0
+margin_bottom = 105.0
+max_value = 1000.0
+allow_greater = true
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 16 )
+
+[node name="Star2" type="TextureProgress" parent="StarsContainer"]
+margin_left = 114.0
+margin_right = 224.0
+margin_bottom = 105.0
+min_value = 1000.0
+max_value = 2000.0
+value = 1000.0
+allow_greater = true
+allow_lesser = true
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 16 )
+
+[node name="Star3" type="TextureProgress" parent="StarsContainer"]
+margin_left = 228.0
+margin_right = 338.0
+margin_bottom = 105.0
+min_value = 2000.0
+max_value = 3000.0
+value = 2000.0
+allow_greater = true
+allow_lesser = true
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 16 )
+
+[node name="Star4" type="TextureProgress" parent="StarsContainer"]
+margin_left = 342.0
+margin_right = 452.0
+margin_bottom = 105.0
+min_value = 3000.0
+max_value = 4000.0
+value = 3000.0
+allow_greater = true
+allow_lesser = true
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 16 )
+
+[node name="Star5" type="TextureProgress" parent="StarsContainer"]
+margin_left = 456.0
+margin_right = 566.0
+margin_bottom = 105.0
+min_value = 4000.0
+max_value = 5000.0
+value = 4000.0
+allow_greater = true
+allow_lesser = true
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 16 )
+
+[node name="AnimationWaitTimer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource( 18 )
+min_timer = 0.1
+max_timer = 1.0
+
+[node name="WaitTimer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource( 18 )
+min_timer = 0.5
+max_timer = 2.0
+
+[node name="TeacherTimer" type="Timer" parent="."]
+one_shot = true
+script = ExtResource( 18 )
+min_timer = 0.1
+max_timer = 10.0

@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/Pixel_7x10.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/UI/button_background.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/UI/button_background_hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/UI/button_background_pressed.tres" type="StyleBox" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+extra_spacing_top = -10
+font_data = ExtResource( 1 )
+
+[resource]
+default_font = SubResource( 1 )
+Button/colors/font_color = Color( 0.0509804, 0.168627, 0.270588, 1 )
+Button/colors/font_color_hover = Color( 0.0509804, 0.168627, 0.270588, 1 )
+Button/colors/font_color_pressed = Color( 0.0509804, 0.168627, 0.270588, 1 )
+Button/fonts/font = SubResource( 1 )
+Button/styles/hover = ExtResource( 3 )
+Button/styles/normal = ExtResource( 2 )
+Button/styles/pressed = ExtResource( 4 )

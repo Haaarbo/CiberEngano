@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://Assets/UI/soundbar_background.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/UI/soundbar_grabber.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/soundbar_grabber_area.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/UI/soundbar_grabber_hover.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=1]
+
+[resource]
+HSlider/icons/grabber = ExtResource( 2 )
+HSlider/icons/grabber_disabled = null
+HSlider/icons/grabber_highlight = ExtResource( 4 )
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = ExtResource( 3 )
+HSlider/styles/grabber_area_highlight = ExtResource( 3 )
+HSlider/styles/slider = ExtResource( 1 )
+script = SubResource( 1 )

@@ -1,0 +1,397 @@
+[gd_scene load_steps=68 format=2]
+
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/level_buttons/endless/locked.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/menu_background_nologo.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/lang_buttons/en_us/button_lang_enUS.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/lang_buttons/pt_br/button_lang_ptBR_hover.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/level_buttons/level_3/0_stars.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/TranslatedButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/UI/level_buttons/level_1/0_stars.png" type="Texture" id=8]
+[ext_resource path="res://Assets/UI/level_buttons/endless/0_points.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/level_buttons/level_2/0_stars.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/level_select_buttons.tres" type="ButtonGroup" id=11]
+[ext_resource path="res://Assets/UI/level_buttons/level_3/locked.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/level_buttons/level_2/locked.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/lang_buttons/en_us/button_lang_enUS_hover.png" type="Texture" id=14]
+[ext_resource path="res://Assets/UI/lang_buttons/en_us/button_lang_enUS_pressed.png" type="Texture" id=15]
+[ext_resource path="res://Assets/UI/lang_buttons/pt_br/button_lang_ptBR_pressed.png" type="Texture" id=16]
+[ext_resource path="res://Assets/UI/lang_buttons/pt_br/button_lang_ptBR.png" type="Texture" id=17]
+[ext_resource path="res://Assets/UI/button_settings.png" type="Texture" id=18]
+[ext_resource path="res://Assets/UI/button_settings_hover.png" type="Texture" id=19]
+[ext_resource path="res://Assets/UI/button_settings_pressed.png" type="Texture" id=20]
+[ext_resource path="res://Assets/UI/endless_score.tres" type="Theme" id=21]
+[ext_resource path="res://EasyBlend/Blends/multiply.png" type="Texture" id=22]
+[ext_resource path="res://Assets/UI/level_buttons/hover.png" type="Texture" id=23]
+[ext_resource path="res://EasyBlend/EasyBlend.shader" type="Shader" id=24]
+[ext_resource path="res://Scripts/CustomHoverButton.gd" type="Script" id=25]
+[ext_resource path="res://Assets/UI/level_buttons/level_1/selected3.png" type="Texture" id=26]
+[ext_resource path="res://Assets/UI/level_buttons/level_1/selected1.png" type="Texture" id=27]
+[ext_resource path="res://Assets/UI/level_buttons/level_1/selected2.png" type="Texture" id=28]
+[ext_resource path="res://Assets/UI/level_buttons/level_2/selected1.png" type="Texture" id=29]
+[ext_resource path="res://Assets/UI/level_buttons/level_2/selected2.png" type="Texture" id=30]
+[ext_resource path="res://Assets/UI/level_buttons/level_2/selected3.png" type="Texture" id=31]
+[ext_resource path="res://Assets/UI/level_buttons/level_3/selected2.png" type="Texture" id=32]
+[ext_resource path="res://Assets/UI/level_buttons/endless/selected1.png" type="Texture" id=33]
+[ext_resource path="res://Assets/UI/level_buttons/level_3/selected1.png" type="Texture" id=34]
+[ext_resource path="res://Assets/UI/level_buttons/endless/selected2.png" type="Texture" id=35]
+[ext_resource path="res://Assets/UI/level_buttons/endless/selected3.png" type="Texture" id=36]
+[ext_resource path="res://Assets/UI/level_buttons/level_3/selected3.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Animations/TeacherMenuAnimation/6.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Animations/TeacherMenuAnimation/5.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Animations/TeacherMenuAnimation/2.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Animations/TeacherMenuAnimation/1.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Animations/TeacherMenuAnimation/3.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Animations/TeacherMenuAnimation/4.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Animations/MenuTransition/1.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Animations/MenuTransition/8.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Animations/MenuTransition/6.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Animations/MenuTransition/7.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Animations/MenuTransition/10.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Animations/MenuTransition/9.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Animations/MenuTransition/11.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Animations/MenuTransition/4.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Animations/MenuTransition/3.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Animations/MenuTransition/5.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Animations/MenuTransition/2.png" type="Texture" id=54]
+[ext_resource path="res://Assets/logo.png" type="Texture" id=55]
+[ext_resource path="res://Scripts/FadeInShader.gdshader" type="Shader" id=57]
+
+[sub_resource type="AnimatedTexture" id=2]
+frames = 3
+frame_0/texture = ExtResource( 27 )
+frame_1/texture = ExtResource( 28 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 26 )
+frame_2/delay_sec = 0.0
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 24 )
+shader_param/enabled = true
+shader_param/Intensity = 1.0
+shader_param/Blend = ExtResource( 22 )
+
+[sub_resource type="AnimatedTexture" id=3]
+frames = 3
+frame_0/texture = ExtResource( 29 )
+frame_1/texture = ExtResource( 30 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 31 )
+frame_2/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=4]
+frames = 3
+frame_0/texture = ExtResource( 34 )
+frame_1/texture = ExtResource( 32 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 37 )
+frame_2/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=5]
+frames = 3
+frame_0/texture = ExtResource( 33 )
+frame_1/texture = ExtResource( 35 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 36 )
+frame_2/delay_sec = 0.0
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ null, ExtResource( 44 ), ExtResource( 54 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 53 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 45 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 50 ) ],
+"loop": false,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 57 )
+shader_param/amount = 1.0
+shader_param/mirror_effect = true
+
+[sub_resource type="Animation" id=11]
+resource_name = "FadeIn"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeIn:material:shader_param/amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FadeIn:material:shader_param/mirror_effect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "FadeOut"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeIn:material:shader_param/amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1.56917, 0.535887 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FadeIn:material:shader_param/mirror_effect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("FadeIn:material:shader_param/amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FadeIn:material:shader_param/mirror_effect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 41 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 39 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="MenuBackground" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 1174, 415 )
+texture = ExtResource( 55 )
+
+[node name="PtBrButton" type="TextureButton" parent="."]
+margin_left = 1046.0
+margin_top = 154.0
+margin_right = 1156.0
+margin_bottom = 239.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 16 )
+texture_hover = ExtResource( 5 )
+
+[node name="EnUsButton" type="TextureButton" parent="."]
+margin_left = 1046.0
+margin_top = 154.0
+margin_right = 1156.0
+margin_bottom = 239.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 14 )
+
+[node name="LevelsContainer" type="HBoxContainer" parent="."]
+margin_left = 639.0
+margin_top = 636.0
+margin_right = 1439.0
+margin_bottom = 851.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Level1Button" type="TextureButton" parent="LevelsContainer"]
+margin_right = 200.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 200, 215 )
+toggle_mode = true
+group = ExtResource( 11 )
+texture_normal = ExtResource( 8 )
+texture_focused = SubResource( 2 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 25 )
+
+[node name="Hover" type="TextureRect" parent="LevelsContainer/Level1Button"]
+visible = false
+material = SubResource( 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 23 )
+
+[node name="Level2Button" type="TextureButton" parent="LevelsContainer"]
+margin_left = 200.0
+margin_right = 400.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 200, 215 )
+toggle_mode = true
+group = ExtResource( 11 )
+texture_normal = ExtResource( 10 )
+texture_disabled = ExtResource( 13 )
+texture_focused = SubResource( 3 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 25 )
+
+[node name="Hover" type="TextureRect" parent="LevelsContainer/Level2Button"]
+visible = false
+material = SubResource( 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 23 )
+
+[node name="Level3Button" type="TextureButton" parent="LevelsContainer"]
+margin_left = 400.0
+margin_right = 600.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 200, 215 )
+toggle_mode = true
+group = ExtResource( 11 )
+texture_normal = ExtResource( 6 )
+texture_disabled = ExtResource( 12 )
+texture_focused = SubResource( 4 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 25 )
+
+[node name="Hover" type="TextureRect" parent="LevelsContainer/Level3Button"]
+visible = false
+material = SubResource( 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 23 )
+
+[node name="InfiniteButton" type="TextureButton" parent="LevelsContainer"]
+margin_left = 600.0
+margin_right = 800.0
+margin_bottom = 215.0
+rect_min_size = Vector2( 200, 215 )
+toggle_mode = true
+group = ExtResource( 11 )
+texture_normal = ExtResource( 9 )
+texture_disabled = ExtResource( 2 )
+texture_focused = SubResource( 5 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 25 )
+
+[node name="InfiniteScore" type="Label" parent="LevelsContainer/InfiniteButton"]
+visible = false
+margin_left = 40.0
+margin_top = 134.0
+margin_right = 160.0
+margin_bottom = 162.0
+theme = ExtResource( 21 )
+text = "00000"
+align = 1
+
+[node name="Hover" type="TextureRect" parent="LevelsContainer/InfiniteButton"]
+visible = false
+material = SubResource( 1 )
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 23 )
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+margin_left = 1478.0
+margin_top = 681.0
+margin_right = 1728.0
+margin_bottom = 781.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StartButton" parent="ButtonsContainer" instance=ExtResource( 7 )]
+margin_right = 250.0
+margin_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 250, 100 )
+focus_mode = 0
+text = "JOGAR"
+translation_key = "START_BUTTON"
+
+[node name="SettingsButton" type="TextureButton" parent="."]
+margin_left = 1165.0
+margin_top = 154.0
+margin_right = 1275.0
+margin_bottom = 239.0
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 19 )
+
+[node name="Transition" type="AnimatedSprite" parent="."]
+position = Vector2( 1182, 501 )
+frames = SubResource( 7 )
+
+[node name="FadeIn" type="ColorRect" parent="Transition"]
+show_behind_parent = true
+material = SubResource( 8 )
+margin_left = 583.0
+margin_top = -371.0
+margin_right = 1753.0
+margin_bottom = 374.0
+rect_scale = Vector2( -1, 1 )
+mouse_filter = 2
+color = Color( 1, 0.92549, 0.839216, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+reset_on_save = false
+anims/FadeIn = SubResource( 11 )
+anims/FadeOut = SubResource( 9 )
+anims/RESET = SubResource( 10 )
+
+[node name="TeacherSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 6 )
+playing = true
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="pressed" from="PtBrButton" to="." method="_on_PtBrButton_pressed"]
+[connection signal="pressed" from="EnUsButton" to="." method="_on_EnUsButton_pressed"]
+[connection signal="pressed" from="ButtonsContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]

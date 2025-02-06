@@ -1,0 +1,146 @@
+[gd_scene load_steps=70 format=2]
+
+[ext_resource path="res://Assets/Animations/TeacherAngry/6.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Animations/TeacherAngry/7.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Animations/TeacherAttendingStudent/1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Animations/TeacherAttendingStudent/2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Animations/TeacherAngry/8.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Animations/TeacherAttendingStudent/3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Animations/TeacherAttendingStudent/4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Animations/TeacherAngry/9.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/7.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToWhiteboard/4.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/4.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Animations/TeacherWritingInWhiteboard/3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToWhiteboard/1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/11.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/5.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/9.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToWhiteboard/3.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToWhiteboard/6.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Animations/TeacherWritingInWhiteboard/2.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/8.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/6.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/10.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToWhiteboard/5.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Animations/TeacherWritingInWhiteboard/1.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToWhiteboard/2.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToWhiteboard/7.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Animations/TeacherDrinking/4.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Animations/TeacherDrinking/3.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/1.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromWhiteboard/3.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromStudent/8.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Animations/TeacherIdle/arm/2.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromStudent/6.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromStudent/4.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromStudent/7.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Animations/TeacherWalkingToStudent/2.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromStudent/2.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromStudent/3.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Animations/TeacherDrinking/5.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Animations/TeacherDrinking/7.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromStudent/5.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Animations/TeacherDrinking/6.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromWhiteboard/2.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromWhiteboard/4.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromStudent/1.png" type="Texture" id=46]
+[ext_resource path="res://Assets/Animations/TeacherDrinking/1.png" type="Texture" id=47]
+[ext_resource path="res://Assets/Animations/TeacherDrinking/2.png" type="Texture" id=48]
+[ext_resource path="res://Assets/Animations/TeacherAngry/5.png" type="Texture" id=49]
+[ext_resource path="res://Assets/Animations/TeacherWalkingBackFromWhiteboard/1.png" type="Texture" id=50]
+[ext_resource path="res://Assets/Animations/TeacherAngry/1.png" type="Texture" id=51]
+[ext_resource path="res://Assets/Animations/TeacherAngry/2.png" type="Texture" id=52]
+[ext_resource path="res://Assets/Animations/TeacherAngry/3.png" type="Texture" id=53]
+[ext_resource path="res://Assets/Animations/TeacherAngry/4.png" type="Texture" id=54]
+[ext_resource path="res://Assets/Animations/TeacherIdle/talking/3.png" type="Texture" id=55]
+[ext_resource path="res://Assets/Animations/TeacherIdle/step/2.png" type="Texture" id=56]
+[ext_resource path="res://Assets/Animations/TeacherIdle/arm/3.png" type="Texture" id=57]
+[ext_resource path="res://Assets/Animations/TeacherIdle/talking/2.png" type="Texture" id=58]
+[ext_resource path="res://Assets/Animations/TeacherIdle/talking/4.png" type="Texture" id=59]
+[ext_resource path="res://Assets/Animations/TeacherIdle/arm/6.png" type="Texture" id=60]
+[ext_resource path="res://Assets/Animations/TeacherIdle/talking/1.png" type="Texture" id=61]
+[ext_resource path="res://Assets/Animations/TeacherIdle/talking/5.png" type="Texture" id=62]
+[ext_resource path="res://Assets/Animations/TeacherIdle/blinking/2.png" type="Texture" id=63]
+[ext_resource path="res://Assets/Animations/TeacherIdle/arm/4.png" type="Texture" id=64]
+[ext_resource path="res://Assets/Animations/TeacherIdle/arm/5.png" type="Texture" id=65]
+[ext_resource path="res://Assets/Animations/TeacherIdle/step/1.png" type="Texture" id=66]
+[ext_resource path="res://Assets/Animations/TeacherIdle/arm/1.png" type="Texture" id=67]
+[ext_resource path="res://Assets/Animations/TeacherIdle/blinking/1.png" type="Texture" id=68]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 49 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "angry",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "attending_student",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 40 ) ],
+"loop": false,
+"name": "drinking_start",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 41 ) ],
+"loop": false,
+"name": "drinking_stop",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 67 ), ExtResource( 33 ), ExtResource( 57 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 60 ) ],
+"loop": false,
+"name": "idle_arm",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 63 ) ],
+"loop": false,
+"name": "idle_blinking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 56 ) ],
+"loop": false,
+"name": "idle_step",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 58 ), ExtResource( 55 ), ExtResource( 59 ), ExtResource( 62 ) ],
+"loop": false,
+"name": "idle_talking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 32 ) ],
+"loop": false,
+"name": "returning_from_student",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 50 ), ExtResource( 44 ), ExtResource( 31 ), ExtResource( 45 ) ],
+"loop": false,
+"name": "returning_from_whiteboard",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ), ExtResource( 37 ), ExtResource( 14 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 9 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "walking_to_student",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 26 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 27 ) ],
+"loop": false,
+"name": "walking_to_whiteboard",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 20 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "writing_in_whiteboard",
+"speed": 5.0
+} ]
+
+[node name="Teacher" type="Area2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 960, 540 )
+frames = SubResource( 1 )
+animation = "drinking_start"
+frame = 4
