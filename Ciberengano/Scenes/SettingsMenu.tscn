@@ -294,7 +294,6 @@ anims/RESET = SubResource( 8 )
 
 [node name="TeacherSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 5
 playing = true
 centered = false
 __meta__ = {

@@ -7,6 +7,10 @@ onready var player = get_node("Player")
 onready var teacher_timer = get_node("TeacherTimer")
 onready var wait_timer = get_node("WaitTimer")
 
+onready var pause_button = $ButtonsContainer/PlayPause/PauseButton
+onready var play_button = $ButtonsContainer/PlayPause/PlayButton
+
+
 var teacher_sprite: Node
 var student_sprite: Node
 var teacher_animation_list := ["drinking_start", "walking_to_student", "walking_to_whiteboard"]
@@ -23,7 +27,12 @@ func _ready() -> void:
 	teacher_timer.connect("timeout", self, "_on_teacher_timer_timeout")
 	wait_timer.connect("timeout", self, "_on_wait_timer_timeout")
 	teacher_timer.start_random()
-
+	
+	#inicia com o botão de play sem estar visível
+	play_button.visible = false
+	
+	
+#Animações
 
 func _on_teacher_timer_timeout() -> void:
 	if teacher_sprite.is_connected("animation_finished", self, "_on_teacher_wait_animation_finished"):
@@ -104,3 +113,23 @@ func _get_random_animation(animation_list: Array, exclude: String = "") -> Strin
 
 	var random_index = randi() % filtered_animations.size()
 	return filtered_animations[random_index]
+
+
+#Botões
+
+#p/ ir ao MainMenu
+func _on_ReturnButton_pressed() -> void:
+	get_tree().change_scene("res://Scenes/MainMenu.tscn")
+	pass # Replace with function body.
+	
+#p/ pause/play
+func _on_PlayButton_pressed() -> void:
+	get_tree().paused = false
+	pause_button.visible = true
+	play_button.visible = false
+
+func _on_PauseButton_pressed() -> void:
+	get_tree().paused = true
+	pause_button.visible = false
+	play_button.visible = true
+

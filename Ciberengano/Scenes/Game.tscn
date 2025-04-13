@@ -64,6 +64,7 @@ __meta__ = {
 }
 
 [node name="ReturnButton" type="TextureButton" parent="ButtonsContainer"]
+pause_mode = 2
 margin_right = 105.0
 margin_bottom = 85.0
 texture_normal = ExtResource( 12 )
@@ -77,6 +78,7 @@ margin_bottom = 85.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="PlayButton" type="TextureButton" parent="ButtonsContainer/PlayPause"]
+pause_mode = 2
 margin_right = 105.0
 margin_bottom = 85.0
 texture_normal = ExtResource( 8 )
@@ -172,3 +174,7 @@ one_shot = true
 script = ExtResource( 18 )
 min_timer = 0.1
 max_timer = 10.0
+
+[connection signal="pressed" from="ButtonsContainer/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="pressed" from="ButtonsContainer/PlayPause/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="ButtonsContainer/PlayPause/PauseButton" to="." method="_on_PauseButton_pressed"]
