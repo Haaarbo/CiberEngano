@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Assets/Animations/TeacherAngry/6.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Animations/TeacherAngry/7.png" type="Texture" id=2]
@@ -68,6 +68,7 @@
 [ext_resource path="res://Assets/Animations/TeacherIdle/step/1.png" type="Texture" id=66]
 [ext_resource path="res://Assets/Animations/TeacherIdle/arm/1.png" type="Texture" id=67]
 [ext_resource path="res://Assets/Animations/TeacherIdle/blinking/1.png" type="Texture" id=68]
+[ext_resource path="res://Scripts/Teacher.gd" type="Script" id=69]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -102,7 +103,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 66 ), ExtResource( 56 ) ],
-"loop": false,
+"loop": true,
 "name": "idle_step",
 "speed": 5.0
 }, {
@@ -138,9 +139,10 @@ animations = [ {
 } ]
 
 [node name="Teacher" type="Area2D"]
+script = ExtResource( 69 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 960, 540 )
+position = Vector2( 964, 540 )
 frames = SubResource( 1 )
 animation = "drinking_start"
 frame = 4

@@ -213,7 +213,7 @@ __meta__ = {
 position = Vector2( 1174, 415 )
 texture = ExtResource( 55 )
 
-[node name="PtBrButton" type="TextureButton" parent="."]
+[node name="PtBrButton" type="TextureButton" parent="." groups=["Button"]]
 margin_left = 1046.0
 margin_top = 154.0
 margin_right = 1156.0
@@ -222,7 +222,7 @@ texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 16 )
 texture_hover = ExtResource( 5 )
 
-[node name="EnUsButton" type="TextureButton" parent="."]
+[node name="EnUsButton" type="TextureButton" parent="." groups=["Button"]]
 margin_left = 1046.0
 margin_top = 154.0
 margin_right = 1156.0
@@ -241,7 +241,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Level1Button" type="TextureButton" parent="LevelsContainer"]
+[node name="Level1Button" type="TextureButton" parent="LevelsContainer" groups=["Button"]]
 margin_right = 200.0
 margin_bottom = 215.0
 rect_min_size = Vector2( 200, 215 )
@@ -260,7 +260,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 23 )
 
-[node name="Level2Button" type="TextureButton" parent="LevelsContainer"]
+[node name="Level2Button" type="TextureButton" parent="LevelsContainer" groups=["Button"]]
 margin_left = 200.0
 margin_right = 400.0
 margin_bottom = 215.0
@@ -281,7 +281,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 23 )
 
-[node name="Level3Button" type="TextureButton" parent="LevelsContainer"]
+[node name="Level3Button" type="TextureButton" parent="LevelsContainer" groups=["Button"]]
 margin_left = 400.0
 margin_right = 600.0
 margin_bottom = 215.0
@@ -302,7 +302,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 23 )
 
-[node name="InfiniteButton" type="TextureButton" parent="LevelsContainer"]
+[node name="InfiniteButton" type="TextureButton" parent="LevelsContainer" groups=["Button"]]
 margin_left = 600.0
 margin_right = 800.0
 margin_bottom = 215.0
@@ -343,7 +343,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StartButton" parent="ButtonsContainer" instance=ExtResource( 7 )]
+[node name="StartButton" parent="ButtonsContainer" groups=["Button"] instance=ExtResource( 7 )]
 margin_right = 250.0
 margin_bottom = 100.0
 grow_horizontal = 0
@@ -353,7 +353,7 @@ focus_mode = 0
 text = "JOGAR"
 translation_key = "START_BUTTON"
 
-[node name="SettingsButton" type="TextureButton" parent="."]
+[node name="SettingsButton" type="TextureButton" parent="." groups=["Button"]]
 margin_left = 1165.0
 margin_top = 154.0
 margin_right = 1275.0

@@ -6,19 +6,27 @@ onready var student = get_node("Student")
 onready var player = get_node("Player")
 onready var teacher_timer = get_node("TeacherTimer")
 onready var wait_timer = get_node("WaitTimer")
+#Nó do timer para ver se perdeu ou não
+onready var lose_timer = get_node("LoseCheckTimer")
 
 onready var pause_button = $ButtonsContainer/PlayPause/PauseButton
 onready var play_button = $ButtonsContainer/PlayPause/PlayButton
 
+#instanciação de GameOver
+#var PackedScene game_over_scene = preload("res://Scenes/GameOver.tscn")
 
 var teacher_sprite: Node
 var student_sprite: Node
 var teacher_animation_list := ["drinking_start", "walking_to_student", "walking_to_whiteboard"]
 var teacher_idle_animation_list := ["idle_arm", "idle_blinking", "idle_step", "idle_talking"]
+#Animações que o jogador pode perder:
+var lose_animation_list := teacher_idle_animation_list + ["walking_to_student", "returning_from_whiteboard"]
 var all_animation_list := teacher_animation_list + teacher_idle_animation_list
 var current_animation := _get_random_animation(teacher_idle_animation_list)
 
 func _ready() -> void:
+	print("isPlaying: ", player.isPlaying)
+
 	teacher_sprite = teacher.get_node("AnimatedSprite")
 	student_sprite = student.get_node("AnimatedSprite")
 	
@@ -26,14 +34,22 @@ func _ready() -> void:
 	student_sprite.play("idle")
 	teacher_timer.connect("timeout", self, "_on_teacher_timer_timeout")
 	wait_timer.connect("timeout", self, "_on_wait_timer_timeout")
+	lose_timer.connect("timeout", self, "_on_lose_timer_timeout")
+	
 	teacher_timer.start_random()
 	
 	#inicia com o botão de play sem estar visível
 	play_button.visible = false
 	
-	
-#Animações
+func _process(delta) -> void:
+	if player.isPlaying and current_animation in lose_animation_list:
+		if lose_timer.is_stopped():
+			lose_timer.start()
+	else:
+		if not lose_timer.is_stopped():
+			lose_timer.stop()
 
+#Animações
 func _on_teacher_timer_timeout() -> void:
 	if teacher_sprite.is_connected("animation_finished", self, "_on_teacher_wait_animation_finished"):
 		teacher_sprite.disconnect("animation_finished", self, "_on_teacher_wait_animation_finished")
@@ -64,6 +80,14 @@ func _on_teacher_timer_timeout() -> void:
 
 	
 func _on_teacher_writing_in_whiteboard_finished() -> void:
+	if teacher_sprite.is_connected("animation_finished", self, "_on_teacher_writing_in_whiteboard_finished"):
+		teacher_sprite.disconnect("animation_finished", self, "_on_teacher_writing_in_whiteboard_finished")
+	# Avança para a próxima animação (voltar do quadro para a posição original)
+	var _a = teacher_timer.connect("timeout", self, "_on_teacher_timer_timeout")
+	var _b = teacher_sprite.connect("animation_finished", self, "_on_teacher_wait_animation_finished")
+	
+	# Você pode querer reiniciar o timer ou conectar ao próximo passo
+	teacher_timer.start_random()
 	pass
 
 
@@ -114,6 +138,12 @@ func _get_random_animation(animation_list: Array, exclude: String = "") -> Strin
 	var random_index = randi() % filtered_animations.size()
 	return filtered_animations[random_index]
 
+func _on_lose_timer_timeout():
+	if player.isPlaying and current_animation in lose_animation_list:
+		teacher_sprite.play("angry")
+		yield(teacher_sprite, "animation_finished") #espera a animação acabar
+		get_tree().change_scene("res://Scenes/GameOver.tscn") # substitua com o caminho correto
+		#add_child(game_over_scene)
 
 #Botões
 
@@ -132,4 +162,3 @@ func _on_PauseButton_pressed() -> void:
 	get_tree().paused = true
 	pause_button.visible = false
 	play_button.visible = true
-

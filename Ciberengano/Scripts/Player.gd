@@ -4,8 +4,10 @@ extends Area2D
 var progress_value : float = 0.0
 var max_progress : float = 1.0
 var fill_speed : float = 0.1  # Ajuste para controlar a velocidade do preenchimento das estrelas
+#Variável para verificar se está ou não jogando
+var isPlaying := false
 
-# Stars Array
+# Stars
 onready var stars = []
 onready var current_star = 0
 
@@ -19,13 +21,15 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("Play"):
 		$AnimatedSprite.play("action")
-		
+		isPlaying = true
 		if current_star <= 4:
 			fill_stars()
 		else:
 			get_tree().change_scene("res://Scenes/MainMenu.tscn")
 	else:
-		$AnimatedSprite.play("idle")	
+		$AnimatedSprite.play("idle")
+		isPlaying = false
+		
 
 func fill_stars():
 	stars[current_star].value += 10

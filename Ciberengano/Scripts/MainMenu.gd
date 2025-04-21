@@ -54,6 +54,7 @@ func _ready() -> void:
 
 
 func _on_StartButton_pressed() -> void:
+	ClickSound.play_sound()
 	var _level = _get_focused_button()
 	if !_level: return
 	var _level_number = _extract_level_number(_level)
