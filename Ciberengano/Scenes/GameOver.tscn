@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/UI/lose/NOTE-Perdeu1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/GameOver.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/UI/lose/NOTE-Perdeu4.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UI/lose/NOTE-Perdeu5.png" type="Texture" id=5]
 [ext_resource path="res://Assets/UI/lose/NOTE-Perdeu3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/SFX/Assinatura.mp3" type="AudioStream" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -94,3 +95,8 @@ speed_scale = 0.5
 autoplay = "fade_in"
 anims/RESET = SubResource( 2 )
 anims/fade_in = SubResource( 3 )
+
+[node name="Assinatura" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 1.0
+pitch_scale = 0.6
