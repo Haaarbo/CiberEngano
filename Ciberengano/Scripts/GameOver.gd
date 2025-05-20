@@ -1,7 +1,7 @@
-extends CanvasLayer
+extends Control
 
 var toque_contador := 0
-onready var paper_sprite := $Paper
+onready var paper_sprite := $TextureRect_Paper/Paper
 
 func _ready():
 	paper_sprite.playing = false
