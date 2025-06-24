@@ -10,7 +10,7 @@
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ) ],
-"loop": false,
+"loop": true,
 "name": "lose",
 "speed": 5.0
 } ]
@@ -88,7 +88,7 @@ position = Vector2( 934, 551 )
 scale = Vector2( 0.642593, 0.642593 )
 frames = SubResource( 1 )
 animation = "lose"
-speed_scale = 0.5
+speed_scale = 0.25
 
 [node name="anim" type="AnimationPlayer" parent="."]
 autoplay = "fade_in"
