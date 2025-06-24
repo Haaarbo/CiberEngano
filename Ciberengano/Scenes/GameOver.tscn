@@ -78,7 +78,7 @@ script = ExtResource( 2 )
 light_mask = 512
 margin_right = 1920.0
 margin_bottom = 1080.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0.407843 )
 
 [node name="TextureRect_Paper" type="TextureRect" parent="."]
 margin_right = 40.0
