@@ -6,6 +6,7 @@ var max_progress : float = 1.0
 var fill_speed : float = 0.1  # Ajuste para controlar a velocidade do preenchimento das estrelas
 #Variável para verificar se está ou não jogando
 var isPlaying := false
+var isWin := false
 
 # Stars
 onready var stars = []
@@ -29,7 +30,12 @@ func _process(delta):
 		if current_star <= 4:
 			fill_stars()
 		else:
-			get_tree().change_scene("res://Scenes/MainMenu.tscn")
+			isWin = true
+			isPlaying = false
+			#garantir que o som do teclado não vai tocar mesmo
+			typing_sound.stream_paused = true
+			get_node("/root/Game/").on_win()
+			#get_tree().change_scene("res://Scenes/MainMenu.tscn")
 	else:
 		$AnimatedSprite.play("idle")
 		isPlaying = false

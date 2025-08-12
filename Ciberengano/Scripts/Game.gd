@@ -15,6 +15,9 @@ onready var play_button = $ButtonsContainer/PlayPause/PlayButton
 #instanciação de GameOver
 var game_over_scene = preload("res://Scenes/GameOver.tscn")
 var instancia_game_over = game_over_scene.instance()
+#instanciação de Win
+var win_scene = preload("res://Scenes/Win.tscn")
+var instancia_win = win_scene.instance()
 
 var teacher_sprite: Node
 var student_sprite: Node
@@ -146,10 +149,14 @@ func _on_lose_timer_timeout():
 		teacher_sprite.play("angry")
 		yield(teacher_sprite, "animation_finished") #espera a animação acabar
 		#get_tree().change_scene("res://Scenes/GameOver.tscn") # substitua com o caminho correto
-
 		add_child(instancia_game_over)
 		get_tree().paused = true
 
+#Tela de vitória / win
+func on_win():
+	add_child(instancia_win)
+	get_tree().paused = true
+	
 #Botões
 
 #p/ ir ao MainMenu
