@@ -238,7 +238,8 @@ margin_right = 1439.0
 margin_bottom = 851.0
 custom_constants/separation = 0
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Level1Button" type="TextureButton" parent="LevelsContainer" groups=["Button"]]
@@ -252,6 +253,9 @@ texture_focused = SubResource( 2 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Hover" type="TextureRect" parent="LevelsContainer/Level1Button"]
 visible = false
@@ -273,6 +277,9 @@ texture_focused = SubResource( 3 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Hover" type="TextureRect" parent="LevelsContainer/Level2Button"]
 visible = false
@@ -294,6 +301,9 @@ texture_focused = SubResource( 4 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Hover" type="TextureRect" parent="LevelsContainer/Level3Button"]
 visible = false
@@ -315,6 +325,9 @@ texture_focused = SubResource( 5 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 25 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="InfiniteScore" type="Label" parent="LevelsContainer/InfiniteButton"]
 visible = false
@@ -340,7 +353,8 @@ margin_right = 1728.0
 margin_bottom = 781.0
 custom_constants/separation = 25
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="StartButton" parent="ButtonsContainer" groups=["Button"] instance=ExtResource( 7 )]
@@ -361,10 +375,16 @@ margin_bottom = 239.0
 texture_normal = ExtResource( 18 )
 texture_pressed = ExtResource( 20 )
 texture_hover = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Transition" type="AnimatedSprite" parent="."]
 position = Vector2( 1182, 501 )
 frames = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="FadeIn" type="ColorRect" parent="Transition"]
 show_behind_parent = true

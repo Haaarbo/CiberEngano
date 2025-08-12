@@ -72,6 +72,7 @@ tracks/1/keys = {
 }
 
 [node name="GameOver" type="Control"]
+pause_mode = 2
 script = ExtResource( 2 )
 
 [node name="Background" type="ColorRect" parent="."]

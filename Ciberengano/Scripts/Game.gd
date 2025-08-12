@@ -13,7 +13,8 @@ onready var pause_button = $ButtonsContainer/PlayPause/PauseButton
 onready var play_button = $ButtonsContainer/PlayPause/PlayButton
 
 #instanciação de GameOver
-#var PackedScene game_over_scene = preload("res://Scenes/GameOver.tscn")
+var game_over_scene = preload("res://Scenes/GameOver.tscn")
+var instancia_game_over = game_over_scene.instance()
 
 var teacher_sprite: Node
 var student_sprite: Node
@@ -25,6 +26,8 @@ var all_animation_list := teacher_animation_list + teacher_idle_animation_list
 var current_animation := _get_random_animation(teacher_idle_animation_list)
 
 func _ready() -> void:
+
+	
 	print("isPlaying: ", player.isPlaying)
 
 	teacher_sprite = teacher.get_node("AnimatedSprite")
@@ -142,8 +145,10 @@ func _on_lose_timer_timeout():
 	if player.isPlaying and current_animation in lose_animation_list:
 		teacher_sprite.play("angry")
 		yield(teacher_sprite, "animation_finished") #espera a animação acabar
-		get_tree().change_scene("res://Scenes/GameOver.tscn") # substitua com o caminho correto
-		#add_child(game_over_scene)
+		#get_tree().change_scene("res://Scenes/GameOver.tscn") # substitua com o caminho correto
+
+		add_child(instancia_game_over)
+		get_tree().paused = true
 
 #Botões
 

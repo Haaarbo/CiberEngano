@@ -19,3 +19,5 @@ func _input(event):
 		elif toque_contador == 2:
 			print("Segundo toque - indo para MainMenu")
 			get_tree().change_scene("res://Scenes/MainMenu.tscn")
+			if get_tree().paused:
+				get_tree().paused = false
