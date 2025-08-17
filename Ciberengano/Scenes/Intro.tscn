@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Animations/IntroAnimation/2.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Intro.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Animations/IntroAnimation/3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Animations/IntroAnimation/1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/SFX/Sinal-Escola.mp3" type="AudioStream" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "intro",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Escola:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Escola:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Intro" type="Control"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 512
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Escola" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="zoom" type="AnimatedSprite" parent="Escola"]
+position = Vector2( 960, 540 )
+frames = SubResource( 1 )
+animation = "intro"
+speed_scale = 0.5
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "fade_in"
+anims/RESET = SubResource( 2 )
+anims/fade_in = SubResource( 3 )
+
+[node name="Sinal_Escola" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 1.0
+pitch_scale = 1.2
+autoplay = true
+bus = "SFX"
+
+[connection signal="animation_finished" from="Escola/zoom" to="." method="_on_zoom_animation_finished"]
